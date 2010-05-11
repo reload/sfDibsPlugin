@@ -1,0 +1,28 @@
+dibs_window:
+  url: /window/*
+  param: { module: sfDibs, action: window }
+  requirements:
+    sf_method: [get]
+    amount: \d+
+    orderid: \d+
+    checksum: \s+
+    
+dibs_accept:
+  url: /accept
+  param: { module: sfDibs, action: accept }
+  
+dibs_cancel:
+  url: /cancel
+  param: { module: sfDibs, action: cancel }
+  
+dibs_callback:
+  url: /callback
+  param: { module: sfDibs, action: callback }
+  
+payment_completed:
+  url: /completed
+  param: { module: sfDibs, action: accept }
+
+dibs_error:
+  url: /error
+  param: { module: sfDibs, action: error }

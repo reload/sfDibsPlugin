@@ -1,0 +1,49 @@
+sfDibs plugin
+====================
+
+*sfDibs* is a symfony plugin which enables access to DIBS danish leading supplier of payment solutions in the Nordic countries http://www.dibs.dk/.
+
+This version will only handle the *Payment Window* type.
+
+Installation
+============
+
+Install plugin from github.com
+
+    $ git clone http://github.com/reloaddk/sfDibsPlugin.git
+
+Enable the module in your settings.yml.
+
+    [settings.yml]
+    all:
+      .settings:
+        enabled_modules: [ default, sfDibs ]
+      
+Clear the cache
+
+    $ symfony cc
+  
+
+Configuration
+=============
+Set various variables in plugins app.yml file, this information can be obtained from http://tech.dibs.dk/?id=2572. The merhant_id is created when you have an account at dibs.dk
+
+    [app.yml]
+      merchant_id   = xxxxxxxxxx
+      language_code = en
+      currency_code = 208
+
+Integration
+===========
+
+Enter the test html from below, somewhere in your code, and pressing the link will open the payment window.
+
+    <?php use_helper('Dibs'); ?>
+    <?php echo dibs_submit_button($amount, $order_id, $checksum); ?>
+    <?php echo dibs_js(); ?>
+        
+
+To do
+=====
+* Handling of the FlexWin and API integration
+* Log data to databse table

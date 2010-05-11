@@ -1,0 +1,11 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+
+# default values
+all:
+  sf_dibs:
+    key1: 1
+    key2: 2
+    merchant_id: 3
+    language_code: 'en'
+    currency_code: 208
